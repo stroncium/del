@@ -106,3 +106,15 @@ test('don\'t delete files, but return them - sync', t => {
 		path.join(t.context.tmp, '4.tmp')
 	]);
 });
+
+test('report failures when sync', t => {
+	// t.throws(() => {
+		del.sync('protecteddir/file.tmp');
+	// });
+});
+
+test('report failures when async', async t => {
+	// await t.throwsAsync(async () => {
+		await del('protecteddir/file.tmp');
+	// });
+});
